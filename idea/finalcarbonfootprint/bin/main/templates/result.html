@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Carbon FootPrint</title>
+  	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="wrapper">
+  	<div id="leftWrapper">
+      <div id="listView" class="list">
+        <li><a href="http://www.onlineittuts.com">Home</a></li>
+        <li><a href="#">Carbon FootPrint</a></li>
+        <li><a href="#">Daily Life</a></li>
+        <li><a href="#">Application</a></li>
+        <li class="list-item-active"><a href="/calculate">Calculator</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </div>
+    </div>
+    <form action="/calculate" method="post">
+	<div id="rightWrapper">
+      	<div id="header"><a id="fullPage" href="#">|||</a></div>
+      	<div id="contentWrapper">
+      	    <h2>Carbon FootPrint Calculator</h2>
+    		<h4 th:text="'Application Hosted Country:' + ${HostedCountry}"></h4>
+    		<h4 th:text="'Application Accessed Country:' + ${AccessedCountry}"></h4>
+			<h4>URL and its corresponding parameters:</h4>
+			<table class="styled-table">
+   			<thead>
+        	<tr>
+            	<th>URL</th>
+            	<th>Method</th>
+            	<th>Query Parameters/Request Body</th>
+            	<th>Performance</th>
+            	<th>Payload</th>
+            	<th>Network</th>
+        	</tr>
+    		</thead>
+   			<tbody>
+        	<tr>
+          	  <td><h4 th:text="${URL1}"></h4></td>
+           	  <td><h4 th:text="${Method1}"></h4></td>
+              <td><h4 th:text="${Parameter1}"></h4></td>
+              <td><img th:src="@{${'img/' + Performance1 + '.png'}}" alt="Compatible" width="50" height="50"></td>
+              <td><img th:src="@{${'img/' + Payload1 + '.png'}}" alt="Compatible" width="50" height="50"></td>
+              <td><img src="img/green.png" alt="Compatible" width="50" height="50"></td>
+        	</tr>
+         	<tr>
+          	  <td><h4 th:text="${URL2}"></h4></td>
+           	  <td><h4 th:text="${Method2}"></h4></td>
+              <td><h4 th:text="${Parameter2}"></h4></td>
+              <td><img th:src="@{${'img/' + Performance2 + '.png'}}" alt="InCompatible" width="50" height="50"></td>
+              <td><img th:src="@{${'img/' + Payload2 + '.png'}}" alt="InCompatible" width="50" height="50"></td>
+              <td><img src="img/red.png" alt="InCompatible" width="50" height="50"></td>
+            </tr>
+        	</tbody>
+			</table>
+		</div>
+  	</form>
+  	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

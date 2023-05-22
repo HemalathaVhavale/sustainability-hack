@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.carbonfootprint'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.7.5'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
+	implementation 'org.json:json:20220924'
+	implementation 'org.springframework.boot:spring-boot-starter-mail:3.0.5'
+	implementation 'javax.mail:javax.mail-api:1.6.2'
+	implementation 'org.springframework:spring-context-support:6.0.8'
+	implementation 'com.sun.activation:jakarta.activation:2.0.1'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
