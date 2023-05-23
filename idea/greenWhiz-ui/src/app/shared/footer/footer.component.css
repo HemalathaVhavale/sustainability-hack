@@ -1,0 +1,35 @@
+.footer
+{
+    overflow: hidden;
+    position: sticky;
+    top: 100%;
+    background-color:#cce7c9;
+    padding: 20px 10px;
+}
+
+h1 
+{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+p 
+{
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+a 
+{
+    color: black;
+    text-decoration:underline;
+    font-size: 17px;
+}
+a:hover 
+{
+    color: var(--primary-color);
+}
+i 
+{
+    padding: 0px 10px;
+}

@@ -1,0 +1,43 @@
+.banner
+{
+    background-image: url('src\assets\pexels-johannes-plenio-4871392.jpg');
+    height: 600px;
+    background-position: center top;
+    background-size: cover;
+}
+.content
+{
+    top: 40%;
+    left: 15%;
+    position: absolute;
+}
+.content h1 
+{
+    color: #fff;
+    font-size: 60px;
+}
+.content a 
+{
+    text-decoration: none;
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.content a:hover 
+{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.step1
+{
+    color: black;
+    font-size: 25px;
+}
+
+.step2
+{
+    color: rgb(118, 114, 114);
+    font-size: 25px;
+}

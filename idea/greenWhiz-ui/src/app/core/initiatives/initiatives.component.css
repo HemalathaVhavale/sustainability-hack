@@ -1,0 +1,24 @@
+.mountain
+{
+    background-image: url('src\assets\pexels-ivan-10919126.jpg');
+    height: 400px;
+    background-size: cover;
+}
+.landscape
+{
+    background-image: url('src\assets\pexels-aysegul-alp-12244872.jpg');
+    height: 400px;
+    background-size: cover;
+}
+.step1
+{
+    color: black;
+    font-size: 36px;
+    text-align: center;
+}
+
+.step2
+{
+    color: black;
+    font-size: 20px;
+}

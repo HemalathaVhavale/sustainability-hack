@@ -1,0 +1,57 @@
+<div class="container mt-5 mb-6" style="padding: 0px 0px 0px 345px;">
+    <h5>Enter the location of the Server where Website/App is located?&nbsp;<span style="color: red;">*</span></h5>
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select #serverLocValue  (selectionChange)="serverLocationchange(serverLocValue.value)">
+        <mat-option *ngFor="let country of countries" [value]="country.name.common">
+          {{country.name.common}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br><br>
+    <h5>Enter the location where the Application is used?&nbsp;<span style="color: red;">*</span></h5>
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select #appLocValue  (selectionChange)="appLocationchange(appLocValue.value)">
+        <mat-option *ngFor="let country of countries" [value]="country.name.common">
+          {{country.name.common}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br><br>
+    <h5>Enter all the URLs used in the application along with their Request Parameters?&nbsp;<span style="color: red;">*</span></h5>
+    <div>
+      <table>
+        <tr>
+          <th mat-header-cell style="text-align: center"> Action </th>
+          <th mat-header-cell style="text-align: center"> URL </th>
+          <th mat-header-cell style="text-align: center"> HTTP Methods</th>
+          <th mat-header-cell style="text-align: center">Query Parameters/Request JSON </th>
+          <th *ngIf="disable" mat-header-cell>Carbon Output </th>
+        </tr>
+        <tr *ngFor="let entry of entries; let i = index;">
+          <td >    
+            <i class="material-icons" (click)="deleteRow(i)">delete</i>   
+          </td> 
+          <td><input matInput [(ngModel)]="entries[i].url"></td>
+          <td>
+            <mat-label>Select</mat-label>
+            <mat-select [(ngModel)]="entries[i].method">
+              <mat-option *ngFor="let method of httpMethods" [value]="method">
+                {{method}}
+              </mat-option>
+          </mat-select>
+          <td><input matInput [(ngModel)]="entries[i].queryParams"></td>
+          <td *ngIf="entries[i].output !== ''"><mat-icon>{{entries[i].output === 'true' ? 'thumb_up' : 'thumb_down'}}</mat-icon></td>
+        </tr>
+        <tr>    
+          <td >    
+            <i class="material-icons" (click)="addRow()">add</i>    
+          </td>    
+        </tr>
+      </table>
+    </div>
+    <br>
+    <button mat-raised-button (click)="submit()">Submit</button>
+  </div>
+  

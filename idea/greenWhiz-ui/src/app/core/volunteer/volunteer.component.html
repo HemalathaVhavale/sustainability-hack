@@ -1,0 +1,30 @@
+<div class="container row mt-5" style="padding: 60px 92px 0px 175px;">
+    <div class="col-lg-6 mt-2">
+        <h1>Thank you for your interest in volunteer opportunities!</h1>
+    </div>
+    <div class="col-lg-6 mt-2">
+        <form [formGroup]="volunteerForm">
+            <div class="row">
+                <div class="col-lg-6 mt-2 mb-2">
+                    <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name">
+                </div>
+                <div class="col-lg-6 mt-2 mb-2">
+                    <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name" >
+                </div>
+                <div class="col-lg-12 mt-2 mb-2">
+                    <input type="text" formControlName="email" class="form-control" placeholder="Enter Email ID" >
+                    <small *ngIf="email.errors" class="text-danger">Email addresses should follow the format user@domain.com.</small><br>
+                </div>
+                <div class="col-lg-12 mt-2 mb-2">
+                    <input type="text" class="form-control" formControlName="contact" placeholder="Enter Phone Number" >
+                </div>
+                <div class="col-lg-12 mt-2 mb-2">
+                    <textarea class="form-control" formControlName="message" placeholder="What makes you interested in being a volunteer?"></textarea>
+                </div>
+                <div class="col-lg-12">
+                    <button class="btn btn-md btn-dark" [disabled]="!volunteerForm.valid" (click)="volunteer()">Submit</button>
+                </div>       
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.banner
+{
+    background-image: url('src\assets\pexels-tom-fisk-8665750.jpg');
+    height: 700px;
+    background-size: cover;
+}
+.step1
+{
+    color: white;
+    font-size: 35px;
+}
+
+.step2
+{
+    color: white;
+    font-size: 25px;
+}
